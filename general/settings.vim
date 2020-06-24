@@ -37,14 +37,18 @@ set autoindent
 set copyindent      " copy indent from the previous line
 
 " Sessions
-autocmd VimLeave * NERDTreeClose
-autocmd VimLeave * mks! ~/.config/nvim/.sessions/last.vim
+" autocmd VimLeave * NERDTreeClose
+" autocmd VimLeave * mks! ~/.config/nvim/.sessions/last.vim
 
 " Settings for ctrl-space
 set nocompatible
 set hidden
 
-highlight Pmenu ctermbg=black guibg=#151D28
+" Colors
 
-" Hide tabline
-" set showtabline=0
+highlight Pmenu ctermbg=black guibg=#192330
+highlight PmenuSel ctermbg=grey guibg=#4A9387
+
+highlight StartifyHeader  ctermfg=2 guifg=#59B7BB
+highlight StartifySection  ctermfg=1 guifg=#59B7BB
+highlight StartifyFile ctermfg=5 guifg=#447CA7

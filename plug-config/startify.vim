@@ -21,7 +21,6 @@ let g:startify_custom_header =
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 0
 let g:startify_custom_header = startify#center([
-            \'                    .                   ', 
             \'    ##############..... ##############  ', 
             \'    ##############......##############  ', 
             \'      ##########..........##########    ', 
@@ -38,6 +37,4 @@ let g:startify_custom_header = startify#center([
             \'      ##########....JJ...JJ..JJ  JJ     ', 
             \'      ########......JJJ..JJJ JJJ JJJ    ', 
             \'      ######    .........               ', 
-            \'                  .....                 ', 
-            \'                    .                   ', 
             \])

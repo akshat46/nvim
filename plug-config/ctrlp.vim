@@ -11,5 +11,5 @@
 let g:ctrlp_working_path_mode = 'rc'
 
 let g:ctrlp_prompt_mappings = {
-    \ 'PrtDeleteEnt()':       ['<C-/>'],
+    \ 'PrtDeleteEnt()':       ['<c-l>'],
     \ }

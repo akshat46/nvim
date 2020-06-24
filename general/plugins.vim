@@ -34,13 +34,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/Colorizer'
 
 " Commenter
-Plug 'preservim/nerdcommenter'
+" Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 
 " Detect Indentation
 Plug 'tpope/vim-sleuth'
 
 " Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
+
+" Aligning
+Plug 'junegunn/vim-easy-align'
 
 "---Utilities---"
 
