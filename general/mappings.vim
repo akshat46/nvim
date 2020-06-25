@@ -16,8 +16,8 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <C-q> :tabclose<CR>
 
 " Sessions
-nnoremap <Leader>s :NERDTreeClose \| :mks! ~/.config/nvim/.sessions/
-nnoremap <Leader>o :source ~/.config/nvim/.sessions/
+nnoremap <Leader>s :SSave! 
+nnoremap <Leader>o :SLoad 
 
 " Split
 nnoremap <C-J> <C-W><C-J>
@@ -33,6 +33,4 @@ nnoremap <C-w><Right> <C-w>10<>>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<cr>
 
-" Colorizer
-nnoremap <C-c><C-c> :ColorToggle <CR>
-
+nnoremap <Leader>mx :noh<CR>

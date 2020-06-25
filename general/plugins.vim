@@ -48,8 +48,20 @@ Plug 'junegunn/vim-easy-align'
 
 "---Utilities---"
 
+"FZF
+Plug 'junegunn/fzf.vim'
+
+" COC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Git
 Plug 'tpope/vim-fugitive'
+
+" Git Commit viewer
+Plug 'junegunn/gv.vim'
+
+" Terminal
+Plug 'voldikss/vim-floaterm'
 
 " Goyo (Zen Mode)
 Plug 'junegunn/goyo.vim'
@@ -63,7 +75,5 @@ Plug 'justinmk/vim-sneak'
 " CtrlP
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
-" Ctrl-space
-" Plug 'vim-ctrlspace/vim-ctrlspace'
 
 call plug#end()
