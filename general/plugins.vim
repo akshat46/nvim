@@ -31,7 +31,7 @@ Plug 'airblade/vim-gitgutter'
 "----Editor-----"
 
 " Colorizer
-Plug 'chrisbra/Colorizer'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Commenter
 " Plug 'preservim/nerdcommenter'
