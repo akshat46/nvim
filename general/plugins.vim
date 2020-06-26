@@ -46,6 +46,9 @@ Plug 'terryma/vim-multiple-cursors'
 " Aligning
 Plug 'junegunn/vim-easy-align'
 
+" Context
+Plug 'wellle/context.vim'
+
 "---Utilities---"
 
 "FZF
