@@ -34,3 +34,4 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<cr>
 
 nnoremap <Leader>mx :noh<CR>
+nnoremap <C-s> <C-u>
