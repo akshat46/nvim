@@ -16,8 +16,8 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <C-q> :tabclose<CR>
 
 " Sessions
-nnoremap <Leader>s :SSave! 
-nnoremap <Leader>o :SLoad 
+nnoremap <Leader>S :SSave! 
+nnoremap <Leader>O :SLoad 
 
 " Split
 nnoremap <C-J> <C-W><C-J>

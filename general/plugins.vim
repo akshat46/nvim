@@ -49,6 +49,7 @@ Plug 'junegunn/vim-easy-align'
 "---Utilities---"
 
 "FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " COC
@@ -71,9 +72,6 @@ Plug 'liuchengxu/vim-which-key'
 
 " Easy Movement 
 Plug 'justinmk/vim-sneak'
-
-" CtrlP
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 
 
 call plug#end()

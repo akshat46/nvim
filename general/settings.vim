@@ -9,7 +9,7 @@
 set number
 
 " Autocomment new line
-set formatoptions-=cro
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set encoding for icons
 set encoding=UTF-8
