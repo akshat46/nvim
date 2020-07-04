@@ -6,52 +6,54 @@
 
 " Part of this file is from https://github.com/ChristianChiarulli/nvim
 
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Constant'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_colors = { 
+            \ 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'CursorLine'],
+            \ 'gutter':  ['bg', 'CursorLine'],
+            \ 'hl':      ['fg', 'Error'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Error'],
+            \ 'info':    ['bg', 'CursorLine'],
+            \ 'border':  ['bg', 'CursorLine'],
+            \ 'prompt':  ['bg', 'CursorLine'],
+            \ 'pointer': ['fg', 'Function'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Normal'] }
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'window': 'call CreateCenteredFloatingWindow()'}
 
-let $FZF_DEFAULT_OPTS = '--layout=reverse'
+" let $FZF_DEFAULT_OPTS = '--layout=reverse --margin=0,0'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!{node_modules,.git}'"
+let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse --margin=0,0'
 
- " Make Ripgrep ONLY search file contents and not filenames
+" Make Ripgrep ONLY search file contents and not filenames
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '?'),
-  \   <bang>0)
+            \ call fzf#vim#grep(
+            \   'rg --column --line-number --hidden --smart-case --no-heading --color=always '.shellescape(<q-args>), 1,
+            \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+            \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4.. -e'}, 'right:50%', '?'),
+            \   <bang>0)
 
 " Ripgrep advanced
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " Git grep
 command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number '.shellescape(<q-args>), 0,
-  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+            \ call fzf#vim#grep(
+            \   'git grep --line-number '.shellescape(<q-args>), 0,
+            \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 " Delete buffers with :BD
 function! s:list_buffers()
@@ -86,7 +88,7 @@ function! CreateCenteredFloatingWindow()
     let s:buf = nvim_create_buf(v:false, v:true)
     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
     call nvim_open_win(s:buf, v:true, opts)
-    set winhl=Normal:Floating
+    set winhl=Normal:Comment
     let opts.row += 1
     let opts.height -= 2
     let opts.col += 2

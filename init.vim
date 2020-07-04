@@ -16,3 +16,6 @@ source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/startify.vim
 source $HOME/.config/nvim/plug-config/whichkey.vim
+
+
+lua require'colorizer'.setup()

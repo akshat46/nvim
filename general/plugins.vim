@@ -32,6 +32,7 @@ Plug 'airblade/vim-gitgutter'
 
 " Colorizer
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'chrisbra/Colorizer'
 
 " Commenter
 " Plug 'preservim/nerdcommenter'
@@ -45,9 +46,6 @@ Plug 'terryma/vim-multiple-cursors'
 
 " Aligning
 Plug 'junegunn/vim-easy-align'
-
-" Context
-Plug 'wellle/context.vim'
 
 "---Utilities---"
 

@@ -37,13 +37,14 @@ let g:which_key_map[','] = [ ":w",                'save file' ]
 let g:which_key_map['='] = [ "<C-W>=",            'reset window size' ]
 let g:which_key_map[' '] = [ ':Buffers',          'buffers' ]
 let g:which_key_map['i'] = [ ':set shiftwidth=4', 'reset indentation' ]
-let g:which_key_map['p'] = [ ':p "0p',            'paste without yank' ]
+let g:which_key_map['p'] = [ '\"0p',            'paste without yank' ]
 let g:which_key_map['q'] = [ ':q',            'close window' ]
 let g:which_key_map['r'] = [ ':edit!',            'reload file' ]
 
 let g:which_key_map.m = {
             \ 'name' : '+miscellaneous',
-            \ 'c': [':ColorizerToggle',               'toggle colorizer'],
+            \ 'c': [':ColorizerToggle',               'toggle colorizer(lua/fast;buggy)'],
+            \ 'C': [':ColorToggle',               'toggle colorizer/slow'],
             \}
 
 " Align
@@ -53,8 +54,8 @@ let g:which_key_map.a = {
             \ '.' : [":'<,'>EasyAlign.",          'align around .'],
             \ ':' : [":'<,'>EasyAlign:",          'align around :'],
             \ '=' : [":'<,'>EasyAlign=",          'align around ='],
-            \ ' ' : [':EasyAlign\ ',              'align around space'],
-            \ 'a' : [':EasyAlign',                'interactive align mode'],
+            \ ' ' : [":'<,'>EasyAlign\\ ",              'align around space'],
+            \ 'a' : [":'<,'>EasyAlign",                'interactive align mode'],
             \}
 
 " Buffers
