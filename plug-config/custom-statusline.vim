@@ -58,7 +58,7 @@ function! ModeIcon(mode) " {{{
     elseif a:mode == 'V' 
         return ' '
     elseif a:mode == "\<C-V>"
-        return '麗'
+        return '礪'
         " Command mode
     elseif a:mode == 'c'
         return ' '
@@ -134,50 +134,9 @@ function! Shiftwidth()
     endif
 endfunction
 
-" Statusbar items
-set statusline=%{RedrawModeColors(mode())}
-" Left side items
-" =======================
-set statusline+=%#CustomStatuslineAccent#
-set statusline+=%#CustomStatuslineAccentBody#%{ModeIcon(mode())}
-set statusline+=%#CustomStatuslineFilename#\ %t\ 
-set statusline+=%#CustomStatuslineSeparator#\ 
-" Modified status
-set statusline+=%#CustomStatuslineModified#
-set statusline+=%#CustomStatuslineModifiedBody#%{SetModifiedSymbol(&modified)}
-set statusline+=%#CustomStatuslineModified#
-" Right side items
-" =======================
-set statusline+=%=
-" Git branch name
-set statusline+=%#CustomStatuslineGitbranch#
-set statusline+=%#CustomStatuslineGitbranchIcon#%{GitBranchIcon()}
-set statusline+=%#CustomStatuslineGitbranchBody#\ %{FugitiveHead()}
-set statusline+=%#CustomStatuslineGitbranchSeparator#\ 
-" Tab length
-set statusline+=%#CustomStatuslineTotalLines#
-set statusline+=%#CustomStatuslineTotalLinesIcon#⇆\ 
-set statusline+=%#CUSTomStatuslineTotalLinesBody#\ %{Shiftwidth()}
-set statusline+=%#CustomStatuslineSeparator#
-" Padding
-set statusline+=\ 
-" Current line / total number of lines
-set statusline+=%#CustomStatuslineTotalLines#
-set statusline+=%#CustomStatuslineTotalLinesIcon#\ 
-set statusline+=%#CustomStatuslineTotalLinesBody#\ %l
-set statusline+=\/\%#CustomStatuslineTotalLinesBody#%L
-set statusline+=%#CustomStatuslineSeparator#
-" Padding
-set statusline+=\ 
-" Filetype
-set statusline+=%#CustomStatuslineFiletype#
-set statusline+=%#CustomStatuslineFiletypeIcon#%{FiletypeIcon()}
-set statusline+=%#CustomStatuslineFiletypeBody#\ %{SetFiletype(&filetype)}
-set statusline+=%#CustomStatuslineFiletypeSeparator#
-
 " Setup the colors
 hi StatusLine cterm=none gui=none ctermbg=none ctermfg=3 guibg=#151D28 guifg=none
-" hi StatusLineNC        ctermfg=8     ctermbg=NONE     cterm=bold
+" hi StatusLineNC cterm=none gui=none ctermbg=none ctermfg=3 guibg=#151D28 guifg=none
 hi CustomStatuslineSeparator cterm=none gui=none ctermbg=none ctermfg=6 guibg=none guifg=#2A3C52
 
 hi CustomStatuslinePercentage ctermfg=0 cterm=NONE ctermbg=NONE
@@ -186,3 +145,88 @@ hi CustomStatuslinePercentageBody ctermbg=0 cterm=none ctermfg=6
 hi CustomStatuslineTotalLines cterm=none gui=none ctermbg=none ctermfg=3 guibg=none guifg=#DBC07F
 hi CustomStatuslineTotalLinesIcon cterm=none gui=none ctermbg=none ctermfg=0 guibg=#DBC07F guifg=#192330
 hi CustomStatuslineTotalLinesBody cterm=none gui=none ctermbg=0 ctermfg=3 guibg=#2A3C52 guifg=#DBC07F
+
+hi CustomStatuslineInactiveDark cterm=none gui=none ctermbg=0 ctermfg=7 guibg=#151D28 guifg=#2A3C52
+hi CustomStatuslineInactiveDarkSeparator cterm=none gui=none ctermbg=0 ctermfg=7 guibg=none guifg=#151D28
+hi CustomStatuslineInactiveLight cterm=none gui=none ctermbg=0 ctermfg=7 guibg=#223042 guifg=#4D6D93
+hi CustomStatuslineInactiveLightSeparator cterm=none gui=none ctermbg=0 ctermfg=7 guibg=none guifg=#223042
+
+function! SetActiveStatusLine()
+    " Statusbar items
+    let statusline="%{RedrawModeColors(mode())}"
+    " Left side items
+    " =======================
+    let statusline.="%#CustomStatuslineAccent#"
+    let statusline.="%#CustomStatuslineAccentBody#%{ModeIcon(mode())}"
+    let statusline.="%#CustomStatuslineFilename#\ %t\ "
+    let statusline.="%#CustomStatuslineSeparator#\ "
+    " Modified status
+    let statusline.="%#CustomStatuslineModified#"
+    let statusline.="%#CustomStatuslineModifiedBody#%{SetModifiedSymbol(&modified)}"
+    let statusline.="%#CustomStatuslineModified#"
+    " Right side items
+    " =======================
+    let statusline.="%="
+    " Git branch name
+    let statusline.="%#CustomStatuslineGitbranch#"
+    let statusline.="%#CustomStatuslineGitbranchIcon#%{GitBranchIcon()}"
+    let statusline.="%#CustomStatuslineGitbranchBody#\ %{FugitiveHead()}"
+    let statusline.="%#CustomStatuslineGitbranchSeparator#\ "
+    " Tab length
+    let statusline.="%#CustomStatuslineTotalLines#"
+    let statusline.="%#CustomStatuslineTotalLinesIcon# "
+    let statusline.="%#CUSTomStatuslineTotalLinesBody#\ %{Shiftwidth()}"
+    let statusline.="%#CustomStatuslineSeparator#"
+    " Padding
+    let statusline.="\ "
+    " Current line / total number of lines
+    let statusline.="%#CustomStatuslineTotalLines#"
+    let statusline.="%#CustomStatuslineTotalLinesIcon# "
+    let statusline.="%#CustomStatuslineTotalLinesBody#\ %l"
+    let statusline.="\/\%#CustomStatuslineTotalLinesBody#%L"
+    let statusline.="%#CustomStatuslineSeparator#"
+    " Padding
+    let statusline.="\ "
+    " Filetype
+    let statusline.="%#CustomStatuslineFiletype#"
+    let statusline.="%#CustomStatuslineFiletypeIcon#%{FiletypeIcon()}"
+    let statusline.="%#CustomStatuslineFiletypeBody#\ %{SetFiletype(&filetype)}"
+    let statusline.="%#CustomStatuslineFiletypeSeparator#\ "
+    return statusline
+endfunction
+
+function! SetInactiveStatusLine()
+    let statusline=""
+    let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
+    let statusline.="%#CustomStatuslineInactiveDark#%{FiletypeIcon()}"
+    let statusline.="%#CustomStatuslineInactiveLight#\ %t\ "
+    let statusline.="%#CustomStatuslineInactiveLightSeparator#\ "
+    " Modified status
+    let statusline.="%#CustomStatuslineModified#"
+    let statusline.="%#CustomStatuslineModifiedBody#%{SetModifiedSymbol(&modified)}"
+    let statusline.="%#CustomStatuslineModified#"
+    " Right side items
+    " =======================
+    let statusline.="%="
+    " Tab length
+    let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
+    let statusline.="%#CustomStatuslineInactiveDark#⇆\ "
+    let statusline.="%#CustomStatuslineInactiveDark#\ %{Shiftwidth()}"
+    let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
+    " Padding
+    let statusline.="\ "
+    " Current line / total number of lines
+    let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
+    let statusline.="%#CustomStatuslineInactiveDark#\ "
+    let statusline.="%#CustomStatuslineInactiveDark#\ %l"
+    let statusline.="\/\%#CustomStatuslineInactiveDark#%L"
+    let statusline.="%#CustomStatuslineInactiveDarkSeparator#\ "
+    return statusline
+endfunction
+
+augroup vimrc-statusline
+    autocmd!
+    autocmd WinEnter * setlocal statusline=%!SetActiveStatusLine()
+    autocmd WinLeave * setlocal statusline=%!SetInactiveStatusLine()
+augroup END
+setlocal statusline=%!SetActiveStatusLine()
