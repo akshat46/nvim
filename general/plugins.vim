@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
 "------UI------"
 
 " Lightline
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 
 " Theme
 Plug 'ntk148v/vim-horizon'

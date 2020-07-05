@@ -7,84 +7,86 @@
 
 " Set theme
 let g:lightline = {
-      \ 'colorscheme': 'horizon',
-      \ 'active': {
-      \   'left': [ [ 'mi', 'paste' ],
-      \             [ 'gbi', 'readonly', 'filename', 'mdi' ] ],
-      \   'right': [ [ 'fi' ],
-      \              [ 'sw' ],
-      \              [ 'lineinfototal'] ]
-      \ },
-      \ 'component': {
-      \   'lineinfototal': ' %l/%L',
-      \ },
-      \ 'component_function': {
-      \   'gbi': 'GitBranchIcon',
-      \   'sw': 'LightlineShiftwidth',
-      \   'fi': 'FiletypeIcon',
-      \   'mi': 'ModeIcon',
-      \   'mdi': 'ModifiedIcon',
-      \ },
-      \ }
+            \ 'colorscheme': 'horizon',
+            \ 'active': {
+            \   'left': [ [ 'mi', 'paste' ],
+            \             [ 'gbi', 'readonly', 'filename', 'mdi' ] ],
+            \   'right': [ [ 'fi' ],
+            \              [ 'sw' ],
+            \              [ 'lineinfototal'] ]
+            \ },
+            \ 'component': {
+            \   'lineinfototal': ' %l/%L',
+            \ },
+            \ 'component_function': {
+            \   'gbi': 'GitBranchIcon',
+            \   'sw': 'LightlineShiftwidth',
+            \   'fi': 'FiletypeIcon',
+            \   'mi': 'ModeIcon',
+            \   'mdi': 'ModifiedIcon',
+            \ },
+            \ 'separator': { 'left': "", 'right': "" },
+            \ 'subseparator': { 'left': "", 'right': "" },
+            \ }
 
 function ModeIcon()
-  if lightline#mode() == "NORMAL"
-    return ' 煮'
-  elseif lightline#mode() == "INSERT"
-    return '  '
-  elseif lightline#mode() == "COMMAND"
-    return '  '
-  elseif lightline#mode() == "V-BLOCK" 
-    return ' ﯠ  '
-  elseif lightline#mode() == "V-LINE" 
-    return ' ﯠ  '
-  elseif lightline#mode() == "VISUAL" 
-    return ' ﯠ '
-  elseif lightline#mode() == "REPLACE" 
-    return ' גּ '
-  elseif lightline#mode() == "INACTIVE" 
-    return '  '
-  endif
+    if lightline#mode() == "NORMAL"
+        return ' 煮'
+    elseif lightline#mode() == "INSERT"
+        return '  '
+    elseif lightline#mode() == "COMMAND"
+        return '  '
+    elseif lightline#mode() == "V-BLOCK" 
+        return ' ﯠ  '
+    elseif lightline#mode() == "V-LINE" 
+        return ' ﯠ  '
+    elseif lightline#mode() == "VISUAL" 
+        return ' ﯠ '
+    elseif lightline#mode() == "REPLACE" 
+        return ' גּ '
+    elseif lightline#mode() == "INACTIVE" 
+        return '  '
+    endif
 endfunction
 
 function ModifiedIcon()
-  return &modified ? '' : ''
+    return &modified ? '' : ''
 endfunction
 
 function GitBranchIcon()
-  return strlen(FugitiveHead())>0 ? ' '.FugitiveHead() : ''
+    return strlen(FugitiveHead())>0 ? ' '.FugitiveHead() : ''
 endfunction
 
 function! FiletypeIcon()
-   return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 
 function! LightlineNoexpandtab()
-  let fname = expand('%:t')
-  if winwidth(0) < 90
-        \ || &expandtab
-        \ || fname == 'ControlP'
-    return ''
-  endif
-  if &shiftwidth == &tabstop
-    return '↹ '.&tabstop.' e̶t̶'
-  elseif &shiftwidth == 0
-    return '↹ '.&tabstop.' e̶t̶'
-  else
-    return '⇆ '.&shiftwidth.' ↹ '.&tabstop.' e̶t̶'
-  endif
+    let fname = expand('%:t')
+    if winwidth(0) < 90
+                \ || &expandtab
+                \ || fname == 'ControlP'
+        return ''
+    endif
+    if &shiftwidth == &tabstop
+        return '↹ '.&tabstop.' e̶t̶'
+    elseif &shiftwidth == 0
+        return '↹ '.&tabstop.' e̶t̶'
+    else
+        return '⇆ '.&shiftwidth.' ↹ '.&tabstop.' e̶t̶'
+    endif
 endfunction
 function! LightlineShiftwidth()
-  let fname = expand('%:t')
-  if winwidth(0) < 90
-        \ || ! &expandtab
-        \ || fname == 'ControlP'
-    return ''
-  endif
-  if &shiftwidth == 0
-    return '⇆ '.&tabstop
-  else
-    return '⇆ '.&shiftwidth
-  endif
+    let fname = expand('%:t')
+    if winwidth(0) < 90
+                \ || ! &expandtab
+                \ || fname == 'ControlP'
+        return ''
+    endif
+    if &shiftwidth == 0
+        return '⇆ '.&tabstop
+    else
+        return '⇆ '.&shiftwidth
+    endif
 endfunction
 
