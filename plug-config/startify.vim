@@ -6,7 +6,7 @@
 "                                                  /____/  
 
 let g:startify_lists = [
-            \ { 'type': 'sessions',  'header': ['   力Sessions']       },
+            \ { 'type': 'sessions',  'header': ['    Sessions']       },
             \ { 'type': 'files',     'header': ['    Recent Files']            },
             \ { 'type': 'dir',       'header': ['    Recent Files from directory '. getcwd()] },
             \ ]

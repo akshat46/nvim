@@ -122,10 +122,8 @@ endfunction
 
 function! Shiftwidth()
     let fname = expand('%:t')
-    if winwidth(0) < 90
-                \ || ! &expandtab
-                \ || fname == 'ControlP'
-        return ' -'
+    if ! &expandtab || fname == 'ControlP'
+        return '-'
     endif
     if &shiftwidth == 0
         return &tabstop
@@ -210,14 +208,14 @@ function! SetInactiveStatusLine()
     let statusline.="%="
     " Tab length
     let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
-    let statusline.="%#CustomStatuslineInactiveDark#⇆\ "
+    let statusline.="%#CustomStatuslineInactiveDark#"
     let statusline.="%#CustomStatuslineInactiveDark#\ %{Shiftwidth()}"
     let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
     " Padding
     let statusline.="\ "
     " Current line / total number of lines
     let statusline.="%#CustomStatuslineInactiveDarkSeparator#"
-    let statusline.="%#CustomStatuslineInactiveDark#\ "
+    let statusline.="%#CustomStatuslineInactiveDark#"
     let statusline.="%#CustomStatuslineInactiveDark#\ %l"
     let statusline.="\/\%#CustomStatuslineInactiveDark#%L"
     let statusline.="%#CustomStatuslineInactiveDarkSeparator#\ "
@@ -227,6 +225,8 @@ endfunction
 augroup vimrc-statusline
     autocmd!
     autocmd WinEnter * setlocal statusline=%!SetActiveStatusLine()
+    autocmd BufEnter * setlocal statusline=%!SetActiveStatusLine()
+    autocmd WinNew * setlocal statusline=%!SetActiveStatusLine()
     autocmd WinLeave * setlocal statusline=%!SetInactiveStatusLine()
 augroup END
 setlocal statusline=%!SetActiveStatusLine()
