@@ -26,9 +26,9 @@ let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'window': 'call CreateCenteredFloatingWindow()'}
 
-" let $FZF_DEFAULT_OPTS = '--layout=reverse --margin=0,0'
+let $FZF_DEFAULT_OPTS = '--reverse'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!{node_modules,.git}'"
-let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse --margin=0,0'
+" let $FZF_DEFAULT_OPTS=' --color=dark --color=fg:15,bg:-1,hl:1,fg+:#ffffff,bg+:0,hl+:1 --color=info:0,prompt:0,pointer:12,marker:4,spinner:11,header:-1 --layout=reverse --margin=0,0'
 
 " Make Ripgrep ONLY search file contents and not filenames
 command! -bang -nargs=* Rg
@@ -75,7 +75,7 @@ command! BD call fzf#run(fzf#wrap({
 
 " floating fzf window with borders
 function! CreateCenteredFloatingWindow()
-    let width = min([&columns - 60, max([80, &columns - 20])])
+    let width = min([&columns - 4, max([80, &columns - 20])])
     let height = min([&lines - 4, max([20, &lines - 10])])
     let top = ((&lines - height) / 2) - 1
     let left = (&columns - width) / 2
@@ -88,11 +88,11 @@ function! CreateCenteredFloatingWindow()
     let s:buf = nvim_create_buf(v:false, v:true)
     call nvim_buf_set_lines(s:buf, 0, -1, v:true, lines)
     call nvim_open_win(s:buf, v:true, opts)
-    set winhl=Normal:Comment
+    set winhl=CursorLine:Floating
     let opts.row += 1
     let opts.height -= 2
-    let opts.col += 2
-    let opts.width -= 4
+    let opts.col += 1
+    let opts.width -= 2
     call nvim_open_win(nvim_create_buf(v:false, v:true), v:true, opts)
     au BufWipeout <buffer> exe 'bw '.s:buf
 endfunction
