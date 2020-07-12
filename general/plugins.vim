@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'itchyny/lightline.vim'
 
 " Theme
-Plug 'ntk148v/vim-horizon'
+" Plug 'ntk148v/vim-horizon'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
@@ -74,5 +74,7 @@ Plug 'liuchengxu/vim-which-key'
 " Easy Movement 
 Plug 'justinmk/vim-sneak'
 
+" Tabline helper
+Plug 'gcmt/taboo.vim'
 
 call plug#end()

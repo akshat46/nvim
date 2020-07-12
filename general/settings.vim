@@ -17,13 +17,12 @@ set encoding=UTF-8
 " Colors
 set termguicolors
 syntax enable
-colo horizon
+colorscheme coral 
 
 " Split
 set splitbelow
 set splitright
 
-" Show lightline
 set laststatus=2
 " Hide mode
 set noshowmode
@@ -45,10 +44,6 @@ set nocompatible
 set hidden
 
 " Colors
-
-highlight Pmenu ctermbg=black guibg=#192330
-highlight PmenuSel ctermbg=grey guibg=#4A9387
-
 highlight StartifyHeader  ctermfg=2 guifg=#59B7BB
 highlight StartifySection  ctermfg=1 guifg=#59B7BB
 highlight StartifyFile ctermfg=5 guifg=#447CA7

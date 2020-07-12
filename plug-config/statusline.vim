@@ -61,7 +61,7 @@ function! ModeIcon(mode) " {{{
         return '礪'
         " Command mode
     elseif a:mode == 'c'
-        return ' '
+        return '⌘ '
         " Terminal mode
     elseif a:mode == 't'
         return 'ﰣ'
