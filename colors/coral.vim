@@ -69,9 +69,9 @@ hi! StatusLineTermNC cterm=reverse gui=reverse ctermbg=237 ctermfg=233 guibg=#3e
 hi! StorageClass cterm=italic gui=italic ctermfg=37 guifg=#447CA7
 hi! String cterm=NONE gui=NONE ctermfg=209 guifg=#BBA183
 hi! Structure cterm=NONE gui=NONE ctermfg=37 guifg=#447CA7
-hi! TabLine cterm=NONE gui=NONE ctermbg=245 ctermfg=234 guibg=#192330 guifg=#A1B5CE
+hi! TabLine cterm=bold gui=bold ctermbg=245 ctermfg=234 guibg=#151D28 guifg=#2A3C52
 hi! TabLineFill cterm=reverse gui=reverse ctermbg=234 ctermfg=245 guibg=#192330 guifg=#192330
-hi! TabLineSel cterm=NONE gui=NONE ctermbg=234 ctermfg=247 guibg=#5CB8A7 guifg=#2A3C52
+hi! TabLineSel cterm=NONE gui=NONE ctermbg=234 ctermfg=247 guibg=#5CB8A7 guifg=#192330
 hi! Title cterm=bold gui=bold ctermfg=37 guifg=#447CA7
 hi! Todo cterm=inverse,bold gui=inverse,bold ctermbg=59 ctermfg=48 guibg=#45493e guifg=#4A9387
 hi! Type cterm=NONE gui=NONE ctermfg=209 guifg=#BBA183

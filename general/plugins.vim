@@ -10,12 +10,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 "------UI------"
 
-" Lightline
-" Plug 'itchyny/lightline.vim'
-
-" Theme
-" Plug 'ntk148v/vim-horizon'
-
 " Nerdtree
 Plug 'preservim/nerdtree'
 
@@ -75,6 +69,6 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'justinmk/vim-sneak'
 
 " Tabline helper
-Plug 'gcmt/taboo.vim'
+Plug 'akshat46/taboo.vim'
 
 call plug#end()

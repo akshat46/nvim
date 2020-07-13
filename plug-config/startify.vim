@@ -25,6 +25,7 @@ let g:startify_custom_header =
             \ 'startify#center(startify#fortune#cowsay())'
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 0
+set sessionoptions+=tabpages,globals
 let g:startify_custom_header = startify#center([
             \'    ##############..... ##############  ', 
             \'    ##############......##############  ', 

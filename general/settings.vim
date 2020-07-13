@@ -47,3 +47,5 @@ set hidden
 highlight StartifyHeader  ctermfg=2 guifg=#59B7BB
 highlight StartifySection  ctermfg=1 guifg=#59B7BB
 highlight StartifyFile ctermfg=5 guifg=#447CA7
+
+set shortmess-=S

@@ -40,12 +40,8 @@ let g:which_key_map['i'] = [ ':set shiftwidth=4',               'reset indentati
 let g:which_key_map['p'] = [ '\"0p',                            'paste without yank' ]
 let g:which_key_map['q'] = [ ':q',                              'close window' ]
 let g:which_key_map['r'] = [ ':edit!',                          'reload file' ]
-
-let g:which_key_map.m = {
-            \ 'name' : '+miscellaneous',
-            \ 'c': [':ColorizerToggle',                         'toggle colorizer(lua/fast;buggy)'],
-            \ 'C': [':ColorToggle',                             'toggle colorizer/slow'],
-            \}
+let g:which_key_map['S'] = [ ':SSave!',                         'Save Session' ]
+let g:which_key_map['O'] = [ ':SLoad',                          'Load Session' ]
 
 " Align
 let g:which_key_map.a = {
@@ -67,6 +63,18 @@ let g:which_key_map.b = {
             \ 'l' : ['blast',                                   'last-buffer']     ,
             \ 'n' : ['bnext',                                   'next-buffer']     ,
             \ 'p' : ['bprevious',                               'previous-buffer'] ,
+            \ }
+
+" t is for terminal
+let g:which_key_map.c = {
+            \ 'name' : '+terminal',
+            \ ';' : [':FloatermNew --wintype=popup --height=6', 'terminal'],
+            \ 'g' : [':FloatermNew lazygit',                    'git'],
+            \ 'n' : [':FloatermNew node',                       'node'],
+            \ 'p' : [':FloatermNew python',                     'python'],
+            \ 'r' : [':FloatermNew ranger',                     'ranger'],
+            \ 't' : [':FloatermToggle',                         'toggle'],
+            \ 'b' : [':FloatermNew bashtop',                    'bashtop'],
             \ }
 
 " Git 
@@ -97,6 +105,12 @@ let g:which_key_map.g = {
             \ 'V' : [':GV!',                                    'view buffer commits'],
             \ }
 
+let g:which_key_map.m = {
+            \ 'name' : '+miscellaneous',
+            \ 'c': [':ColorizerToggle',                         'toggle colorizer(lua/fast;buggy)'],
+            \ 'C': [':ColorToggle',                             'toggle colorizer/slow'],
+            \}
+
 " Search
 let g:which_key_map.s = {
             \ 'name' : '+search',
@@ -124,14 +138,25 @@ let g:which_key_map.s = {
             \ 'z' : [':FZF',                                    'FZF'],
             \ }
 
-" t is for terminal
+" Tabs
 let g:which_key_map.t = {
-            \ 'name' : '+terminal',
-            \ ';' : [':FloatermNew --wintype=popup --height=6', 'terminal'],
-            \ 'g' : [':FloatermNew lazygit',                    'git'],
-            \ 'n' : [':FloatermNew node',                       'node'],
-            \ 'p' : [':FloatermNew python',                     'python'],
-            \ 'r' : [':FloatermNew ranger',                     'ranger'],
-            \ 't' : [':FloatermToggle',                         'toggle'],
-            \ 'b' : [':FloatermNew bashtop',                    'bashtop'],
-            \ }
+            \ 'name'  : '+tabs',
+            \ 't'     : [':tabnew',                             'open new tab'] ,
+            \ 'n'     : [':call TabooOpenFn() ',                'set label & open new tab'] ,
+            \ 'r'     : [':call TabooRenameFn()',               'set tab label'] ,
+            \ 'x'     : [':TabooReset',                         'reset tab label'] ,
+            \}
+
+function TabooRenameFn()
+    call inputsave()
+    let label = input("Tab name: ")
+    exec ":TabooRename ".label
+    call inputrestore()
+endfunction
+
+function TabooOpenFn()
+    call inputsave()
+    let label = input("New tab name: ")
+    exec ":TabooOpen ".label
+    call inputrestore()
+endfunction

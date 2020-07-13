@@ -14,12 +14,11 @@ source $HOME/.config/nvim/general/mappings.vim
 source $HOME/.config/nvim/colors/coral.vim
 
 " Plugin Configs
-" source $HOME/.config/nvim/plug-config/lightline.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/startify.vim
 source $HOME/.config/nvim/plug-config/whichkey.vim
 source $HOME/.config/nvim/plug-config/statusline.vim
-source $HOME/.config/nvim/plug-config/tabline.vim
+source $HOME/.config/nvim/plug-config/taboo.vim
 
 lua require'colorizer'.setup()
