@@ -222,5 +222,5 @@ if has('nvim')
   let g:terminal_color_15=      '#63CDCF'
 
 else
-  let g:terminal_ansi_colors = ['#192330', '#A65169', '#4A9387', '#BBA183', '#447CA7', '#434094', '#B4796F', '#192330', '#A1B5CE', '#BB5871', '#59B7BB', '#B4796F', '#447CA7', '#4945A3', '#A1B5CE', '#D3E8E6']
+  let g:terminal_ansi_colors = ['#151D28', '#A65169', '#4A9387', '#BBA183', '#447CA7', '#434094', '#B4796F', '#192330', '#A1B5CE', '#BB5871', '#59B7BB', '#B4796F', '#447CA7', '#4945A3', '#A1B5CE', '#D3E8E6']
 endif

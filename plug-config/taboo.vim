@@ -9,14 +9,13 @@ hi TabLineTabAlt cterm=none gui=none ctermbg=0 ctermfg=7 guifg=#151D28 guibg=non
 hi TabLineTabMod cterm=none gui=none ctermbg=0 ctermfg=7 guibg=#151D28 guifg=#C94F6D
 hi TabLineTabModSel cterm=none gui=none ctermbg=0 ctermfg=7 guibg=#5CB8A7 guifg=#B36479
 
-let g:taboo_tab_sel_prefix = '%#TabLineSelAlt#'
+let g:taboo_tab_active_prefix = '%#TabLineSelAlt#'
 let g:taboo_tab_format = " %S%U%m "
 let g:taboo_renamed_tab_format = " %l%U%m "
-let g:taboo_tab_sel_suffix = '%#TabLineSelAlt# '
+let g:taboo_tab_active_suffix = '%#TabLineSelAlt# '
 
 let g:taboo_tab_prefix = '%#TabLineTabAlt#'
 let g:taboo_tab_suffix = '%#TabLineTabAlt# '
 
-let g:taboo_modified_tab_flag = ' %#TabLineTabMod#'
-" let g:taboo_modified_tab_sel_flag = ' %#TabLineTabModSel#'
-let g:taboo_modified_tab_active_flag = 0
+" let g:taboo_modified_tab_flag = ' %#TabLineTabMod#'
+" let g:taboo_modified_tab_active_flag = ''

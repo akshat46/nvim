@@ -73,7 +73,7 @@ let g:which_key_map.c = {
             \ 'n' : [':FloatermNew node',                       'node'],
             \ 'p' : [':FloatermNew python',                     'python'],
             \ 'r' : [':FloatermNew ranger',                     'ranger'],
-            \ 't' : [':FloatermToggle',                         'toggle'],
+            \ 'c' : [':FloatermToggle',                         'toggle'],
             \ 'b' : [':FloatermNew bashtop',                    'bashtop'],
             \ }
 
