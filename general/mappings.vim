@@ -26,7 +26,8 @@ nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<cr>
 
 nnoremap <Leader>mx :noh<CR>
-nnoremap <C-s> <C-u>
+
+nnoremap 9 $
 
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)

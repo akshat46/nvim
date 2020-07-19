@@ -71,4 +71,7 @@ Plug 'justinmk/vim-sneak'
 " Tabline helper
 Plug 'akshat46/taboo.vim'
 
+" Smooth scroll
+Plug 'psliwka/vim-smoothie'
+
 call plug#end()

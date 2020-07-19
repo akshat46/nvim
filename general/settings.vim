@@ -43,6 +43,9 @@ set copyindent      " copy indent from the previous line
 set nocompatible
 set hidden
 
+" Keep 3 lines below and above the cursor
+set scrolloff=3 
+
 " Colors
 highlight StartifyHeader  ctermfg=2 guifg=#59B7BB
 highlight StartifySection  ctermfg=1 guifg=#59B7BB

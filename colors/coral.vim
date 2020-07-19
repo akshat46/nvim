@@ -146,12 +146,12 @@ hi! link CtrlPMode2 StatusLine
 hi! link deniteMatched Normal
 hi! link deniteMatchedChar Title
 hi! link jsFlowMaybe Normal
-hi! link jsFlowObject Normal
+hi! link jsFlowObject Identifier
 hi! link jsFlowType PreProc
 hi! link graphqlName Normal
 hi! link graphqlOperator Normal
 hi! link jsArrowFunction Operator
-hi! link jsClassDefinition Normal
+hi! link jsClassDefinition String
 hi! link jsClassFuncName Title
 hi! link jsExport Statement
 hi! link jsFuncName Title

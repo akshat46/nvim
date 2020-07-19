@@ -20,5 +20,7 @@ source $HOME/.config/nvim/plug-config/startify.vim
 source $HOME/.config/nvim/plug-config/whichkey.vim
 source $HOME/.config/nvim/plug-config/statusline.vim
 source $HOME/.config/nvim/plug-config/taboo.vim
+source $HOME/.config/nvim/plug-config/smoothie.vim
+source $HOME/.config/nvim/plug-config/coc.vim
 
 lua require'colorizer'.setup()
