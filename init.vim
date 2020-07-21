@@ -11,7 +11,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/mappings.vim
 
 " Themes
-source $HOME/.config/nvim/colors/coral.vim
+" source $HOME/.config/nvim/colors/coral.vim
 
 " Plugin Configs
 source $HOME/.config/nvim/plug-config/nerdtree.vim

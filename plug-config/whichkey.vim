@@ -180,10 +180,18 @@ let g:which_key_map.s = {
 let g:which_key_map.t = {
             \ 'name'  : '+tabs',
             \ 't'     : [':tabnew',                             'open new tab'] ,
+            \ 'd'     : [':call SetWorkingDir() ',              'set working directory for current tab'] ,
             \ 'n'     : [':call TabooOpenFn() ',                'set label & open new tab'] ,
             \ 'r'     : [':call TabooRenameFn()',               'set tab label'] ,
             \ 'x'     : [':TabooReset',                         'reset tab label'] ,
             \}
+
+function SetWorkingDir()
+    call inputsave()
+    let label = input("Path to dir: ")
+    exec ":tcd ".label
+    call inputrestore()
+endfunction
 
 function TabooRenameFn()
     call inputsave()

@@ -17,7 +17,11 @@ set encoding=UTF-8
 " Colors
 set termguicolors
 syntax enable
-colorscheme coral 
+let g:gruvbox_sign_column='bg0'
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_italic=1
+colorscheme gruvbox 
 
 " Split
 set splitbelow

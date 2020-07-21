@@ -10,34 +10,34 @@ set laststatus=2
 function! RedrawModeColors(mode) " {{{
     " Normal mode
     if a:mode == 'n'
-        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=6   guibg=none    guifg=#CF7F70
-        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=6    ctermfg=0   guibg=#CF7F70 guifg=#192330
-        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#CF7F70
+        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=6   guibg=none    guifg=#B4796F
+        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=6    ctermfg=0   guibg=#B4796F guifg=#192330
+        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#B4796F
         " Insert mode
     elseif a:mode == 'i'
-        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=2   guibg=none    guifg=#5CB8A7
-        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=2    ctermfg=0   guibg=#5CB8A7 guifg=#192330
-        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#5CB8A7
+        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=2   guibg=none    guifg=#4A9387
+        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=2    ctermfg=0   guibg=#4A9387 guifg=#192330
+        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#4A9387
         " Replace mode
     elseif a:mode == 'R'
-        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=1   guibg=none    guifg=#C94F6D
-        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=1    ctermfg=0   guibg=#C94F6D guifg=#192330
-        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#C94F6D
+        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=1   guibg=none    guifg=#A65169
+        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=1    ctermfg=0   guibg=#A65169 guifg=#192330
+        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#A65169
         " Visual mode
     elseif a:mode == 'v' || a:mode == 'V' || a:mode == "\<C-V>"
-        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=7   guibg=none    guifg=#63CDCF
-        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=7    ctermfg=0   guibg=#63CDCF guifg=#192330
-        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#63CDCF
+        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=7   guibg=none    guifg=#59B7BB
+        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=7    ctermfg=0   guibg=#59B7BB guifg=#192330
+        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#59B7BB
         " Command mode
     elseif a:mode == 'c'
-        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=6   guibg=none    guifg=#CF7F70
-        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=6    ctermfg=0   guibg=#CF7F70 guifg=#192330
-        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#CF7F70
+        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=6   guibg=none    guifg=#B4796F
+        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=6    ctermfg=0   guibg=#B4796F guifg=#192330
+        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#B4796F
         " Terminal mode
     elseif a:mode == 't'
-        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=3   guibg=none    guifg=#DBC07F
-        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=3    ctermfg=0   guibg=#DBC07F guifg=#192330
-        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#DBC07F
+        hi CustomStatuslineAccent     cterm=none gui=none ctermbg=none ctermfg=3   guibg=none    guifg=#BBA183
+        hi CustomStatuslineAccentBody cterm=none gui=none ctermbg=3    ctermfg=0   guibg=#BBA183 guifg=#192330
+        hi CustomStatuslineFilename   cterm=none gui=none ctermbg=0    ctermfg=251 guibg=#2A3C52 guifg=#BBA183
     endif
     return ''
 endfunction
@@ -71,8 +71,8 @@ endfunction
 
 function! SetModifiedSymbol(modified) " {{{
     if a:modified == 1
-        hi CustomStatuslineModifiedBody cterm=none gui=none ctermbg=1 ctermfg=0 guibg=#C94F6D guifg=#192330
-        hi CustomStatuslineModified cterm=none gui=none ctermbg=none ctermfg=1 guibg=none guifg=#C94F6D
+        hi CustomStatuslineModifiedBody cterm=none gui=none ctermbg=1 ctermfg=0 guibg=#A65169 guifg=#192330
+        hi CustomStatuslineModified cterm=none gui=none ctermbg=none ctermfg=1 guibg=none guifg=#A65169
     else
         hi CustomStatuslineModifiedBody cterm=none gui=none ctermbg=0 ctermfg=0 guibg=#192330 guifg=#192330
         hi CustomStatuslineModified cterm=none gui=none ctermbg=0 ctermfg=0 guibg=#192330 guifg=#192330
@@ -105,9 +105,9 @@ endfunction
 
 function GitBranchIcon()
     if strlen(FugitiveHead())>0 && winwidth(0) > 70
-        hi CustomStatuslineGitbranch          cterm=none gui=none ctermbg=none ctermfg=5 guibg=none    guifg=#5AA6C7
-        hi CustomStatuslineGitbranchIcon      cterm=none gui=none ctermbg=none ctermfg=0 guibg=#5AA6C7 guifg=#192330
-        hi CustomStatuslineGitbranchBody      cterm=none gui=none ctermbg=0    ctermfg=5 guibg=#2A3C52 guifg=#5AA6C7
+        hi CustomStatuslineGitbranch          cterm=none gui=none ctermbg=none ctermfg=5 guibg=none    guifg=#447CA7
+        hi CustomStatuslineGitbranchIcon      cterm=none gui=none ctermbg=none ctermfg=0 guibg=#447CA7 guifg=#192330
+        hi CustomStatuslineGitbranchBody      cterm=none gui=none ctermbg=0    ctermfg=5 guibg=#2A3C52 guifg=#447CA7
         hi CustomStatuslineGitbranchSeparator cterm=none gui=none ctermbg=none ctermfg=6 guibg=none    guifg=#2A3C52
         return ' '
     else
@@ -139,9 +139,9 @@ hi CustomStatuslineSeparator cterm=none gui=none ctermbg=none ctermfg=6 guibg=no
 hi CustomStatuslinePercentage     ctermfg=0 cterm=NONE ctermbg=NONE
 hi CustomStatuslinePercentageBody ctermbg=0 cterm=none ctermfg=6
 
-hi CustomStatuslineTotalLines     cterm=none gui=none ctermbg=none ctermfg=3 guibg=none    guifg=#DBC07F
-hi CustomStatuslineTotalLinesIcon cterm=none gui=none ctermbg=none ctermfg=0 guibg=#DBC07F guifg=#192330
-hi CustomStatuslineTotalLinesBody cterm=none gui=none ctermbg=0    ctermfg=3 guibg=#2A3C52 guifg=#DBC07F
+hi CustomStatuslineTotalLines     cterm=none gui=none ctermbg=none ctermfg=3 guibg=none    guifg=#BBA183
+hi CustomStatuslineTotalLinesIcon cterm=none gui=none ctermbg=none ctermfg=0 guibg=#BBA183 guifg=#192330
+hi CustomStatuslineTotalLinesBody cterm=none gui=none ctermbg=0    ctermfg=3 guibg=#2A3C52 guifg=#BBA183
 
 hi CustomStatuslineInactiveDark           cterm=none gui=none ctermbg=0 ctermfg=7 guibg=#151D28 guifg=#2A3C52
 hi CustomStatuslineInactiveDarkSeparator  cterm=none gui=none ctermbg=0 ctermfg=7 guibg=none    guifg=#151D28

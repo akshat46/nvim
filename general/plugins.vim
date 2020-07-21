@@ -22,6 +22,9 @@ Plug 'mhinz/vim-startify'
 " Git Gutter
 Plug 'airblade/vim-gitgutter'
 
+" Custom Gruvbox
+Plug 'akshat46/gruvbox'
+
 "----Editor-----"
 
 " Colorizer
