@@ -43,6 +43,12 @@ let g:which_key_map['r'] = [ ':edit!',                          'reload file' ]
 let g:which_key_map['S'] = [ ':SSave!',                         'Save Session' ]
 let g:which_key_map['O'] = [ ':SLoad',                          'Load Session' ]
 
+let g:which_key_map['['] = {
+            \ 'name' : '+surround',
+            \ "'" : ["ysiw",                        'surround word'],
+            \ ';' : ["yss",                        'surround line'],
+            \}
+
 " Align
 let g:which_key_map.a = {
             \ 'name' : '+align',
@@ -68,7 +74,7 @@ let g:which_key_map.b = {
 " t is for terminal
 let g:which_key_map.c = {
             \ 'name' : '+terminal',
-            \ ';' : [':FloatermNew --wintype=popup --height=6', 'terminal'],
+            \ ',' : [':FloatermNew --wintype=popup --height=6', 'terminal'],
             \ 'g' : [':FloatermNew lazygit',                    'git'],
             \ 'n' : [':FloatermNew node',                       'node'],
             \ 'p' : [':FloatermNew python',                     'python'],

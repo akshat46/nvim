@@ -44,6 +44,12 @@ Plug 'terryma/vim-multiple-cursors'
 " Aligning
 Plug 'junegunn/vim-easy-align'
 
+" Surround
+Plug 'tpope/vim-surround'
+
+" auto-close brackets
+Plug 'jiangmiao/auto-pairs'
+
 "---Utilities---"
 
 "FZF
