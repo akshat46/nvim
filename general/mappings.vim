@@ -25,6 +25,9 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-\> :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<cr>
 
+nnoremap L $
+nnoremap H ^
+
 nnoremap <Leader>mx :noh<CR>
 
 nnoremap 9 $

@@ -9,5 +9,7 @@
         "json",
         "python"
     ],
-    "prettier.tabWidth": 4
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "prettier.jsxBracketSameLine": true
 }
