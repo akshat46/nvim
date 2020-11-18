@@ -32,164 +32,165 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
             \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " initial 
-let g:which_key_map['/'] = [ ":'<,'>Commentary",                'comment' ]
-let g:which_key_map[','] = [ ":w",                              'save file' ]
-let g:which_key_map['='] = [ "<C-W>=",                          'reset window size' ]
-let g:which_key_map[' '] = [ ':Buffers',                        'buffers' ]
-let g:which_key_map['i'] = [ ':set shiftwidth=4',               'reset indentation' ]
-let g:which_key_map['p'] = [ '\"0p',                            'paste without yank' ]
-let g:which_key_map['q'] = [ ':q',                              'close window' ]
-let g:which_key_map['r'] = [ ':edit!',                          'reload file' ]
-let g:which_key_map['S'] = [ ':SSave!',                         'Save Session' ]
-let g:which_key_map['O'] = [ ':SLoad',                          'Load Session' ]
+let g:which_key_map['/'] = [ ":'<,'>Commentary",          'comment' ]
+let g:which_key_map[','] = [ ":w",                        'save file' ]
+let g:which_key_map['='] = [ "<C-W>=",                    'reset window size' ]
+let g:which_key_map[' '] = [ ':Buffers',                  'buffers' ]
+let g:which_key_map['i'] = [ ':set shiftwidth=4',         'reset indentation' ]
+let g:which_key_map['p'] = [ '\"0p',                      'paste without yank' ]
+let g:which_key_map['q'] = [ ':q',                        'close window' ]
+let g:which_key_map['Q'] = [ ':qa',                       'exit' ]
+let g:which_key_map['r'] = [ ':edit!',                    'reload file' ]
+let g:which_key_map['S'] = [ ':SSave!',                   'Save Session' ]
+let g:which_key_map['O'] = [ ':SLoad',                    'Load Session' ]
 
 let g:which_key_map['['] = {
             \ 'name' : '+surround',
-            \ "'" : ["ysiw",                        'surround word'],
-            \ ';' : ["yss",                        'surround line'],
+            \ "'" : ["ysiw",                              'surround word'],
+            \ ';' : ["yss",                               'surround line'],
             \}
 
 " Align
 let g:which_key_map.a = {
             \ 'name' : '+align',
-            \ ',' : [":'<,'>EasyAlign,",                        'align around ,'],
-            \ '.' : [":'<,'>EasyAlign.",                        'align around .'],
-            \ ':' : [":'<,'>EasyAlign:",                        'align around :'],
-            \ '=' : [":'<,'>EasyAlign=",                        'align around ='],
-            \ ' ' : [":'<,'>EasyAlign\\ ",                      'align around space'],
-            \ 'a' : [":'<,'>EasyAlign",                         'interactive align mode'],
+            \ ',' : [":'<,'>EasyAlign,",                  'align around ,'],
+            \ '.' : [":'<,'>EasyAlign.",                  'align around .'],
+            \ ':' : [":'<,'>EasyAlign:",                  'align around :'],
+            \ '=' : [":'<,'>EasyAlign=",                  'align around ='],
+            \ ' ' : [":'<,'>EasyAlign\\ ",                'align around space'],
+            \ 'a' : [":'<,'>EasyAlign",                   'interactive align mode'],
             \}
 
 " Buffers
 let g:which_key_map.b = {
             \ 'name' : '+buffer',
-            \ 'd' : [':BD',                                     'delete-buffers']   ,
-            \ 'f' : ['bfirst',                                  'first-buffer']    ,
-            \ 'h' : ['Startify',                                'home-buffer']     ,
-            \ 'l' : ['blast',                                   'last-buffer']     ,
-            \ 'n' : ['bnext',                                   'next-buffer']     ,
-            \ 'p' : ['bprevious',                               'previous-buffer'] ,
+            \ 'd' : [':BD',                               'delete-buffers']   ,
+            \ 'f' : ['bfirst',                            'first-buffer']    ,
+            \ 'h' : ['Startify',                          'home-buffer']     ,
+            \ 'l' : ['blast',                             'last-buffer']     ,
+            \ 'n' : ['bnext',                             'next-buffer']     ,
+            \ 'p' : ['bprevious',                         'previous-buffer'] ,
             \ }
 
 " t is for terminal
-let g:which_key_map.c = {
+let           g:which_key_map.c = {
             \ 'name' : '+terminal',
-            \ ',' : [':FloatermNew --wintype=popup --height=6', 'terminal'],
-            \ 'g' : [':FloatermNew lazygit',                    'git'],
-            \ 'n' : [':FloatermNew node',                       'node'],
-            \ 'p' : [':FloatermNew python',                     'python'],
-            \ 'r' : [':FloatermNew ranger',                     'ranger'],
-            \ 'c' : [':FloatermToggle',                         'toggle'],
-            \ 'b' : [':FloatermNew bashtop',                    'bashtop'],
+            \ ',' : [':FloatermNew --height=24',          'terminal'],
+            \ 'g' : [':FloatermNew lazygit',              'git'],
+            \ 'n' : [':FloatermNew node',                 'node'],
+            \ 'p' : [':FloatermNew python',               'python'],
+            \ 'r' : [':FloatermNew ranger',               'ranger'],
+            \ 'c' : [':FloatermToggle',                   'toggle'],
+            \ 'b' : [':FloatermNew bashtop',              'bashtop'],
             \ }
 
 " Git 
 let g:which_key_map.g = {
             \ 'name' : '+git',
-            \ '/' : [':!git rev-parse --show-toplevel',         'set current to git directory'],
-            \ 'a' : [':Git add .',                              'add all'],
-            \ 'A' : [':Git add %',                              'add current'],
-            \ 'b' : [':Git blame',                              'blame'],
-            \ 'B' : [':GBrowse',                                'browse'],
-            \ 'c' : [':Git commit',                             'commit'],
-            \ 'd' : [':Git diff',                               'diff'],
-            \ 'D' : [':Gdiffsplit',                             'diff split'],
-            \ 'g' : [':Gstatus',                                'status'],
-            \ 'G' : [':GGrep',                                  'git grep'],
-            \ 'h' : [':GitGutterLineHighlightsToggle',          'highlight hunks'],
-            \ 'H' : ['<Plug>(GitGutterPreviewHunk)',            'preview hunk'],
-            \ 'j' : ['<Plug>(GitGutterNextHunk)',               'next hunk'],
-            \ 'k' : ['<Plug>(GitGutterPrevHunk)',               'prev hunk'],
-            \ 'l' : [':Git log',                                'log'],
-            \ 'p' : [':Git push',                               'push'],
-            \ 'P' : [':Git pull',                               'pull'],
-            \ 'r' : [':GRemove',                                'remove'],
-            \ 's' : ['<Plug>(GitGutterStageHunk)',              'stage hunk'],
-            \ 't' : [':GitGutterSignsToggle',                   'toggle signs'],
-            \ 'u' : ['<Plug>(GitGutterUndoHunk)',               'undo hunk'],
-            \ 'v' : [':GV',                                     'view commits'],
-            \ 'V' : [':GV!',                                    'view buffer commits'],
+            \ '/' : [':!git rev-parse --show-toplevel',   'set current to git directory'],
+            \ 'a' : [':Git add .',                        'add all'],
+            \ 'A' : [':Git add %',                        'add current'],
+            \ 'b' : [':Git blame',                        'blame'],
+            \ 'B' : [':GBrowse',                          'browse'],
+            \ 'c' : [':Git commit',                       'commit'],
+            \ 'd' : [':Git diff',                         'diff'],
+            \ 'D' : [':Gdiffsplit',                       'diff split'],
+            \ 'g' : [':Gstatus',                          'status'],
+            \ 'G' : [':GGrep',                            'git grep'],
+            \ 'h' : [':GitGutterLineHighlightsToggle',    'highlight hunks'],
+            \ 'H' : ['<Plug>(GitGutterPreviewHunk)',      'preview hunk'],
+            \ 'j' : ['<Plug>(GitGutterNextHunk)',         'next hunk'],
+            \ 'k' : ['<Plug>(GitGutterPrevHunk)',         'prev hunk'],
+            \ 'l' : [':Git log',                          'log'],
+            \ 'p' : [':Git push',                         'push'],
+            \ 'P' : [':Git pull',                         'pull'],
+            \ 'r' : [':GRemove',                          'remove'],
+            \ 's' : ['<Plug>(GitGutterStageHunk)',        'stage hunk'],
+            \ 't' : [':GitGutterSignsToggle',             'toggle signs'],
+            \ 'u' : ['<Plug>(GitGutterUndoHunk)',         'undo hunk'],
+            \ 'v' : [':GV',                               'view commits'],
+            \ 'V' : [':GV!',                              'view buffer commits'],
             \ }
 
 let g:which_key_map.l = {
-            \ 'name' : '+lsp' ,
-            \ '.' : [':CocConfig'                          , 'config'],
-            \ ';' : ['<Plug>(coc-refactor)'                , 'refactor'],
-            \ 'a' : ['<Plug>(coc-codeaction)'              , 'line action'],
-            \ 'A' : ['<Plug>(coc-codeaction-selected)'     , 'selected action'],
-            \ 'b' : [':CocNext'                            , 'next action'],
-            \ 'B' : [':CocPrev'                            , 'prev action'],
-            \ 'c' : [':CocList commands'                   , 'commands'],
-            \ 'd' : ['<Plug>(coc-definition)'              , 'definition'],
-            \ 'D' : ['<Plug>(coc-declaration)'             , 'declaration'],
-            \ 'e' : [':CocList extensions'                 , 'extensions'],
-            \ 'f' : ['<Plug>(coc-format-selected)'         , 'format selected'],
-            \ 'F' : ['<Plug>(coc-format)'                  , 'format'],
-            \ 'h' : ['<Plug>(coc-float-hide)'              , 'hide'],
-            \ 'i' : ['<Plug>(coc-implementation)'          , 'implementation'],
-            \ 'I' : [':CocList diagnostics'                , 'diagnostics'],
-            \ 'j' : ['<Plug>(coc-float-jump)'              , 'float jump'],
-            \ 'l' : ['<Plug>(coc-codelens-action)'         , 'code lens'],
-            \ 'n' : ['<Plug>(coc-diagnostic-next)'         , 'next diagnostic'],
-            \ 'N' : ['<Plug>(coc-diagnostic-next-error)'   , 'next error'],
-            \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
-            \ 'O' : [':CocList outline'                    , 'outline'],
-            \ 'p' : ['<Plug>(coc-diagnostic-prev)'         , 'prev diagnostic'],
-            \ 'P' : ['<Plug>(coc-diagnostic-prev-error)'   , 'prev error'],
-            \ 'q' : ['<Plug>(coc-fix-current)'             , 'quickfix'],
-            \ 'r' : ['<Plug>(coc-rename)'                  , 'rename'],
-            \ 'R' : ['<Plug>(coc-references)'              , 'references'],
-            \ 's' : [':CocList -I symbols'                 , 'references'],
-            \ 'S' : [':CocList snippets'                   , 'snippets'],
-            \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
-            \ 'u' : [':CocListResume'                      , 'resume list'],
-            \ 'U' : [':CocUpdate'                          , 'update CoC'],
-            \ 'v' : [':Vista!!'                            , 'tag viewer'],
-            \ 'z' : [':CocDisable'                         , 'disable CoC'],
-            \ 'Z' : [':CocEnable'                          , 'enable CoC'],
+            \ 'name' : '+lsp',
+            \ '.' : [':CocConfig',                        'config'],
+            \ ';' : ['<Plug>(coc-refactor)',              'refactor'],
+            \ 'a' : ['<Plug>(coc-codeaction)',            'line action'],
+            \ 'A' : ['<Plug>(coc-codeaction-selected)',   'selected action'],
+            \ 'b' : [':CocNext',                          'next action'],
+            \ 'B' : [':CocPrev',                          'prev action'],
+            \ 'c' : [':CocList commands',                 'commands'],
+            \ 'd' : ['<Plug>(coc-definition)',            'definition'],
+            \ 'D' : ['<Plug>(coc-declaration)',           'declaration'],
+            \ 'e' : [':CocList extensions',               'extensions'],
+            \ 'f' : ['<Plug>(coc-format-selected)',       'format selected'],
+            \ 'F' : ['<Plug>(coc-format)',                'format'],
+            \ 'h' : ['<Plug>(coc-float-hide)',            'hide'],
+            \ 'i' : ['<Plug>(coc-implementation)',        'implementation'],
+            \ 'I' : [':CocList diagnostics',              'diagnostics'],
+            \ 'j' : ['<Plug>(coc-float-jump)',            'float jump'],
+            \ 'l' : ['<Plug>(coc-codelens-action)',       'code lens'],
+            \ 'n' : ['<Plug>(coc-diagnostic-next)',       'next diagnostic'],
+            \ 'N' : ['<Plug>(coc-diagnostic-next-error)', 'next error'],
+            \ 'o' : ['<Plug>(coc-openlink)',              'open link'],
+            \ 'O' : [':CocList outline',                  'outline'],
+            \ 'p' : ['<Plug>(coc-diagnostic-prev)',       'prev diagnostic'],
+            \ 'P' : ['<Plug>(coc-diagnostic-prev-error)', 'prev error'],
+            \ 'q' : ['<Plug>(coc-fix-current)',           'quickfix'],
+            \ 'r' : ['<Plug>(coc-rename)',                'rename'],
+            \ 'R' : ['<Plug>(coc-references)',            'references'],
+            \ 's' : [':CocList -I symbols',               'references'],
+            \ 'S' : [':CocList snippets',                 'snippets'],
+            \ 't' : ['<Plug>(coc-type-definition)',       'type definition'],
+            \ 'u' : [':CocListResume',                    'resume list'],
+            \ 'U' : [':CocUpdate',                        'update CoC'],
+            \ 'v' : [':Vista!!',                          'tag viewer'],
+            \ 'z' : [':CocDisable',                       'disable CoC'],
+            \ 'Z' : [':CocEnable',                        'enable CoC'],
             \ }
 
 let g:which_key_map.m = {
             \ 'name' : '+miscellaneous',
-            \ 'c': [':ColorizerToggle',                         'toggle colorizer(lua/fast;buggy)'],
-            \ 'C': [':ColorToggle',                             'toggle colorizer/slow'],
+            \ 'c': [':ColorizerToggle',                   'toggle colorizer(lua/fast;buggy)'],
+            \ 'C': [':ColorToggle',                       'toggle colorizer/slow'],
             \}
 
 " Search
 let g:which_key_map.s = {
             \ 'name' : '+search',
-            \ '/' : [':History/',                               'history'],
-            \ ';' : [':Commands',                               'commands'],
-            \ 'b' : [':BLines',                                 'lines in current buffer'],
-            \ 'c' : [':Commits',                                'commits'],
-            \ 'C' : [':BCommits',                               'buffer commits'],
-            \ 'f' : [':Files',                                  'files'],
-            \ 'g' : [':GFiles',                                 'git files'],
-            \ 'G' : [':GFiles?',                                'modified git files'],
-            \ 'h' : [':History',                                'file history'],
-            \ 'H' : [':History:',                               'command history'],
-            \ 'l' : [':Lines',                                  'lines'] ,
-            \ 'm' : [':Marks',                                  'marks'] ,
-            \ 'M' : [':Maps',                                   'normal maps'] ,
-            \ 'p' : [':Helptags',                               'help tags'] ,
-            \ 'P' : [':Tags',                                   'project tags'],
-            \ 's' : [':CocList snippets',                       'snippets'],
-            \ 'S' : [':Colors',                                 'color schemes'],
-            \ 't' : [':Rg',                                     'text Rg'],
-            \ 'T' : [':BTags',                                  'buffer tags'],
-            \ 'w' : [':Windows',                                'search windows'],
-            \ 'y' : [':Filetypes',                              'file types'],
-            \ 'z' : [':FZF',                                    'FZF'],
+            \ '/' : [':History/',                         'history'],
+            \ ';' : [':Commands',                         'commands'],
+            \ 'b' : [':BLines',                           'lines in current buffer'],
+            \ 'c' : [':Commits',                          'commits'],
+            \ 'C' : [':BCommits',                         'buffer commits'],
+            \ 'f' : [':Files',                            'files'],
+            \ 'g' : [':GFiles',                           'git files'],
+            \ 'G' : [':GFiles?',                          'modified git files'],
+            \ 'h' : [':History',                          'file history'],
+            \ 'H' : [':History:',                         'command history'],
+            \ 'l' : [':Lines',                            'lines'] ,
+            \ 'm' : [':Marks',                            'marks'] ,
+            \ 'M' : [':Maps',                             'normal maps'] ,
+            \ 'p' : [':Helptags',                         'help tags'] ,
+            \ 'P' : [':Tags',                             'project tags'],
+            \ 's' : [':CocList snippets',                 'snippets'],
+            \ 'S' : [':Colors',                           'color schemes'],
+            \ 't' : [':Rg',                               'text Rg'],
+            \ 'T' : [':BTags',                            'buffer tags'],
+            \ 'w' : [':Windows',                          'search windows'],
+            \ 'y' : [':Filetypes',                        'file types'],
+            \ 'z' : [':FZF',                              'FZF'],
             \ }
 
 " Tabs
 let g:which_key_map.t = {
             \ 'name'  : '+tabs',
-            \ 't'     : [':tabnew',                             'open new tab'] ,
-            \ 'd'     : [':call SetWorkingDir() ',              'set working directory for current tab'] ,
-            \ 'n'     : [':call TabooOpenFn() ',                'set label & open new tab'] ,
-            \ 'r'     : [':call TabooRenameFn()',               'set tab label'] ,
-            \ 'x'     : [':TabooReset',                         'reset tab label'] ,
+            \ 't'     : [':tabnew',                       'open new tab'] ,
+            \ 'd'     : [':call SetWorkingDir() ',        'set working directory for current tab'] ,
+            \ 'n'     : [':call TabooOpenFn() ',          'set label & open new tab'] ,
+            \ 'r'     : [':call TabooRenameFn()',         'set tab label'] ,
+            \ 'x'     : [':TabooReset',                   'reset tab label'] ,
             \}
 
 function SetWorkingDir()

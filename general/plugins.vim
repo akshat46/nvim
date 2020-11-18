@@ -50,6 +50,9 @@ Plug 'tpope/vim-surround'
 " auto-close brackets
 Plug 'jiangmiao/auto-pairs'
 
+" Indentation guide
+Plug 'thaerkh/vim-indentguides'
+
 "---Utilities---"
 
 "FZF

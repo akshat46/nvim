@@ -22,5 +22,6 @@ source $HOME/.config/nvim/plug-config/statusline.vim
 source $HOME/.config/nvim/plug-config/taboo.vim
 source $HOME/.config/nvim/plug-config/smoothie.vim
 source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/indentguides.vim
 
 lua require'colorizer'.setup()

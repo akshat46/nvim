@@ -171,7 +171,7 @@ function! SetActiveStatusLine()
     let statusline .= "%#CustomStatuslineGitbranchSeparator#\ "
     " Tab length
     let statusline .= "%#CustomStatuslineTotalLines#"
-    let statusline .= "%#CustomStatuslineTotalLinesIcon# "
+    let statusline .= "%#CustomStatuslineTotalLinesIcon# "
     let statusline .= "%#CUSTomStatuslineTotalLinesBody#\ %{Shiftwidth()}"
     let statusline .= "%#CustomStatuslineSeparator#"
     " Padding
@@ -207,7 +207,7 @@ function! SetInactiveStatusLine()
     let statusline .= "%="
     " Tab length
     let statusline .= "%#CustomStatuslineInactiveDarkSeparator#"
-    let statusline .= "%#CustomStatuslineInactiveDark#"
+    let statusline .= "%#CustomStatuslineInactiveDark#"
     let statusline .= "%#CustomStatuslineInactiveDark#\ %{Shiftwidth()}"
     let statusline .= "%#CustomStatuslineInactiveDarkSeparator#"
     " Padding
