@@ -5,5 +5,6 @@
 "/_/   /_/ /_/ \__,_/   \___/ /_/ /_/ \__/   \__, /  \__,_/  /_/   \__,_/   \___/ /____/  
 "                                           /____/       
 
-let g:indentguides_spacechar = '┊'
-let g:indentguides_tabchar = '│'
+let g:indentLine_char_list   = ['│', '|', '┆', '┊']
+let g:indentLine_color_gui   = '#223042'
+let g:indentLine_fgcolor_gui = '#223042'

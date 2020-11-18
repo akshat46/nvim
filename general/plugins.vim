@@ -25,6 +25,9 @@ Plug 'airblade/vim-gitgutter'
 " Custom Gruvbox
 Plug 'akshat46/gruvbox'
 
+" Syntax Highlighting
+Plug 'sheerun/vim-polyglot'
+
 "----Editor-----"
 
 " Colorizer
@@ -51,7 +54,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
 " Indentation guide
-Plug 'thaerkh/vim-indentguides'
+Plug 'Yggdroot/indentLine'
 
 "---Utilities---"
 
