@@ -23,5 +23,6 @@ source $HOME/.config/nvim/plug-config/taboo.vim
 source $HOME/.config/nvim/plug-config/smoothie.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/indentguides.vim
+source $HOME/.config/nvim/plug-config/clever-f.vim
 
 lua require'colorizer'.setup()

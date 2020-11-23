@@ -10,6 +10,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 "------UI------"
 
+" Vim Tips
+Plug 'michaelb/vim-tips'
+
 " Nerdtree
 Plug 'preservim/nerdtree'
 
@@ -29,6 +32,12 @@ Plug 'akshat46/gruvbox'
 Plug 'sheerun/vim-polyglot'
 
 "----Editor-----"
+
+" Selection
+Plug 'gcmt/wildfire.vim'
+
+" Better f/F(without ,)
+Plug 'rhysd/clever-f.vim'
 
 " Colorizer
 Plug 'norcalli/nvim-colorizer.lua'

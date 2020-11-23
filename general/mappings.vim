@@ -32,6 +32,8 @@ vnoremap H ^
 
 nnoremap <Leader>mx :noh<CR>
 
+inoremap <A-right> <C-o>
+
 nnoremap 9 $
 
 nmap ga <Plug>(EasyAlign)

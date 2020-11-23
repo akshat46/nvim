@@ -13,6 +13,7 @@ let g:startify_lists = [
 
 let g:startify_session_dir= '~/.config/nvim/.sessions'
 let g:startify_session_persistence = 1
+let g:startify_custom_header = 'startify#pad([GetTip()])'
 
 let g:startify_session_before_save = [
             \ 'echo "Cleaning up before saving.."',

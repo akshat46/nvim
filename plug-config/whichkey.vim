@@ -42,12 +42,14 @@ let g:which_key_map['C'] = [ "'<,'>:w !xsel -ib",         'copy to clipboard' ]
 let g:which_key_map['q'] = [ ':q',                        'close window' ]
 let g:which_key_map['Q'] = [ ':qa',                       'exit vim' ]
 let g:which_key_map['w'] = [ ':wq',                       'save and close window' ]
-let g:which_key_map['W'] = [ ':wqa',                       'save all and exit vim' ]
+let g:which_key_map['W'] = [ ':wqa',                      'save all and exit vim' ]
 let g:which_key_map['r'] = [ ':edit!',                    'reload file' ]
 let g:which_key_map['S'] = [ ':SSave!',                   'Save Session' ]
 let g:which_key_map['L'] = [ ':SLoad',                    'Load Session' ]
 let g:which_key_map['='] = [ 'zo',                        'Open Fold' ]
 let g:which_key_map['-'] = [ 'zc',                        'Close Fold' ]
+let g:which_key_map['d'] = ['<Plug>(coc-definition)',     'definition']
+let g:which_key_map['D'] = ['<Plug>(coc-declaration)',    'declaration']
 
 let g:which_key_map['['] = {
             \ 'name' : '+surround',
