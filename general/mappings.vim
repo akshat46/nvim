@@ -39,8 +39,12 @@ nnoremap 9 $
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
+" blackhold operator
 nnoremap x "_x
 nnoremap d "_d
 nnoremap c "_c
 vnoremap d "_d
 vnoremap c "_c
+
+nmap <space> <ESC>
+vmap <space> <ESC>
