@@ -6,42 +6,37 @@
 "                                                  /____/  
 
 let g:startify_lists = [
-            \ { 'type': 'sessions',  'header': ['    Sessions']       },
-            \ { 'type': 'files',     'header': ['    Recent Files']            },
-            \ { 'type': 'dir',       'header': ['    Recent Files from directory '. getcwd()] },
-            \ ]
+    \ { 'type': 'sessions',  'header': ['    Sessions']       },
+    \ { 'type': 'files',     'header': ['    Recent Files']            },
+    \ { 'type': 'dir',       'header': ['    Recent Files from directory '. getcwd()] },
+    \ ]
 
 let g:startify_session_dir= '~/.config/nvim/.sessions'
 let g:startify_session_persistence = 1
-let g:startify_custom_header = 'startify#pad([GetTip()])'
 
 let g:startify_session_before_save = [
-            \ 'echo "Cleaning up before saving.."',
-            \ 'silent! NERDTreeTabsClose'
-            \ ]
+    \ 'echo "Cleaning up before saving.."',
+    \ 'silent! NERDTreeTabsClose'
+    \ ]
 
-" let NERDTreeHijackNetrw = 0
-
-let g:startify_custom_header =
-            \ 'startify#center(startify#fortune#cowsay())'
 let g:startify_fortune_use_unicode = 1
 let g:startify_enable_special = 0
 set sessionoptions+=tabpages,globals
-let g:startify_custom_header = startify#center([
-            \'    ##############..... ##############  ', 
-            \'    ##############......##############  ', 
-            \'      ##########..........##########    ', 
-            \'      ##########........##########      ', 
-            \'      ##########.......##########       ', 
-            \'      ##########.....##########..       ', 
-            \'      ##########....##########.....     ', 
-            \'    ..##########..##########.........   ', 
-            \'  ....##########.#########............. ', 
-            \'    ..################JJJ............   ', 
-            \'      ################.............     ', 
-            \'      ##############.JJJ.JJJJJJJJJJ     ', 
-            \'      ############...JJ...JJ..JJ  JJ    ', 
-            \'      ##########....JJ...JJ..JJ  JJ     ', 
-            \'      ########......JJJ..JJJ JJJ JJJ    ', 
-            \'      ######    .........               ', 
-            \])
+let g:startify_custom_header = [
+    \'  ##############..... ############## ', 
+    \'  ##############......############## ', 
+    \'    ##########..........##########   ', 
+    \'    ##########........##########     ', 
+    \'    ##########.......##########      ', 
+    \'    ##########.....##########..      ', 
+    \'    ##########....##########.....    ', 
+    \'  ..##########..##########.........  ', 
+    \'....##########.#########.............', 
+    \'  ..################JJJ............  ', 
+    \'    ################.............    ', 
+    \'    ##############.JJJ.JJJJJJJJJJ    ', 
+    \'    ############...JJ...JJ..JJ  JJ   ', 
+    \'    ##########....JJ...JJ..JJ  JJ    ', 
+    \'    ########......JJJ..JJJ JJJ JJJ   ', 
+    \'    ######    .........              ', 
+    \]
