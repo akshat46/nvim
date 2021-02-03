@@ -35,6 +35,8 @@ Plug 'sheerun/vim-polyglot'
 
 " Selection
 Plug 'gcmt/wildfire.vim'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
 
 " Better f/F(without ,)
 Plug 'rhysd/clever-f.vim'
@@ -71,6 +73,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+"Snippet
+Plug 'honza/vim-snippets'
+
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -91,6 +96,7 @@ Plug 'liuchengxu/vim-which-key'
 
 " Easy Movement 
 Plug 'justinmk/vim-sneak'
+Plug 'kshenoy/vim-signature'
 
 " Tabline helper
 Plug 'akshat46/taboo.vim'

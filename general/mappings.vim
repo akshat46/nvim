@@ -8,6 +8,8 @@
 " Leader
 let mapleader=","
 
+" copy to clipboard
+vnoremap <S-y> "+y
 
 " Tabs
 nnoremap <A-Left> :tabprevious<CR>
@@ -27,7 +29,7 @@ nnoremap <Leader>nf :NERDTreeFind<cr>
 
 nnoremap L $
 nnoremap H ^
-vnoremap L $
+vnoremap L g_
 vnoremap H ^
 
 nnoremap <Leader>mx :noh<CR>
