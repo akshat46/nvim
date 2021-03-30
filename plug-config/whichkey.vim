@@ -40,6 +40,7 @@ let g:which_key_map['i'] = [ ':set shiftwidth=4',         'reset indentation' ]
 let g:which_key_map['p'] = [ '\"0p',                      'paste previous without yank' ]
 let g:which_key_map['q'] = [ ':q',                        'close window' ]
 let g:which_key_map['Q'] = [ ':qa',                       'exit vim' ]
+let g:which_key_map['`'] = [ ':SClose',                   'close current project and open dashboard' ]
 let g:which_key_map['w'] = [ ':wq',                       'save and close window' ]
 let g:which_key_map['W'] = [ ':wqa',                      'save all and exit vim' ]
 let g:which_key_map['r'] = [ ':edit!',                    'reload file' ]
@@ -49,6 +50,7 @@ let g:which_key_map['='] = [ 'zo',                        'Open Fold' ]
 let g:which_key_map['-'] = [ 'zc',                        'Close Fold' ]
 let g:which_key_map['d'] = ['<Plug>(coc-definition)',     'definition']
 let g:which_key_map['D'] = ['<Plug>(coc-declaration)',    'declaration']
+let g:which_key_map['x'] = ['%',                          'cycle forward through matching tags']
 
 let g:which_key_map['['] = {
     \ 'name' : '+surround',

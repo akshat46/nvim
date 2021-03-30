@@ -31,6 +31,9 @@ Plug 'akshat46/gruvbox'
 " Syntax Highlighting
 Plug 'sheerun/vim-polyglot'
 
+" Syntax Highlighting for svelte
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
 "----Editor-----"
 
 " Selection
@@ -66,6 +69,9 @@ Plug 'jiangmiao/auto-pairs'
 
 " Indentation guide
 Plug 'Yggdroot/indentLine'
+
+" Move between tags
+Plug 'adelarsq/vim-matchit'
 
 "---Utilities---"
 

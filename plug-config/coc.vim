@@ -30,6 +30,7 @@ else
     set signcolumn=yes
 endif
 
+let g:coc_node_path = '/home/akshat/.nvm/versions/node/v15.11.0/bin/node'
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',

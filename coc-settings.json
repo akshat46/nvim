@@ -3,6 +3,7 @@
         "css",
         "markdown",
         "javascript",
+        "svelte",
         "graphql",
         "html",
         "yaml",
@@ -11,5 +12,6 @@
     ],
     "prettier.printWidth": 120,
     "prettier.tabWidth": 4,
-    "prettier.jsxBracketSameLine": true
+    "prettier.jsxBracketSameLine": true,
+    "npm.binPath": "~/.nvm/versions/node/v15.11.0/bin/npm"
 }
