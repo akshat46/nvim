@@ -8,6 +8,9 @@
 " Leader
 let mapleader=","
 
+" Esc
+imap ,. <Esc>
+
 " copy to clipboard
 vnoremap <S-y> "+y
 
@@ -50,3 +53,12 @@ vnoremap c "_c
 
 nmap <space> <ESC>
 vmap <space> <ESC>
+
+" relative line numbers
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END

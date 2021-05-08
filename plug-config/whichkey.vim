@@ -33,6 +33,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " initial 
 let g:which_key_map['/'] = [ ":'<,'>Commentary",          'comment' ]
+let g:which_key_map['.'] = [ "<Esc>",                        'save file' ]
 let g:which_key_map[','] = [ ":w",                        'save file' ]
 let g:which_key_map['0'] = [ "<C-W>=",                    'reset window size' ]
 let g:which_key_map[' '] = [ ':Buffers',                  'buffers' ]
@@ -48,6 +49,7 @@ let g:which_key_map['S'] = [ ':SSave!',                   'Save Session' ]
 let g:which_key_map['L'] = [ ':SLoad',                    'Load Session' ]
 let g:which_key_map['='] = [ 'zo',                        'Open Fold' ]
 let g:which_key_map['-'] = [ 'zc',                        'Close Fold' ]
+let g:which_key_map['j'] = [ 'JsDoc',                     'Generate JsDoc' ]
 let g:which_key_map['d'] = ['<Plug>(coc-definition)',     'definition']
 let g:which_key_map['D'] = ['<Plug>(coc-declaration)',    'declaration']
 let g:which_key_map['x'] = ['%',                          'cycle forward through matching tags']

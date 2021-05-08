@@ -1,4 +1,7 @@
 {
+    "diagnostic.errorSign": "",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "",
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
         "markdown",
@@ -10,7 +13,7 @@
         "json",
         "python"
     ],
-    "prettier.printWidth": 120,
+    "prettier.printWidth": 100,
     "prettier.tabWidth": 4,
     "prettier.jsxBracketSameLine": true,
     "npm.binPath": "~/.nvm/versions/node/v15.11.0/bin/npm"

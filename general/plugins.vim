@@ -52,6 +52,12 @@ Plug 'chrisbra/Colorizer'
 " Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-commentary'
 
+" Generate JSDoc
+Plug 'heavenshell/vim-jsdoc', { 
+  \ 'for': ['javascript', 'javascript.jsx'], 
+  \ 'do': 'make install'
+\}
+
 " Detect Indentation
 Plug 'tpope/vim-sleuth'
 
